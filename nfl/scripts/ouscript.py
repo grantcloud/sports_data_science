@@ -9,7 +9,7 @@ tdf = pd.read_csv('data/nfl_teams.csv')
 tdf = tdf[~tdf.team_name.isin(['Phoenix Cardinals','St. Louis Cardinals','Baltimore Colts','San Diego Chargers','St. Louis Rams','Boston Patriots','Los Angeles Raiders','Houston Oilers','Tennessee Oilers'])]
 
 # import scores, favorites, and spreads from 1966
-df = pd.read_csv('spreadspoke_scores.csv')
+df = pd.read_csv('data/spreadspoke_scores.csv')
 
 # removing unneeded columns
 df = df.loc[:,['schedule_season','schedule_playoff',
@@ -17,8 +17,8 @@ df = df.loc[:,['schedule_season','schedule_playoff',
               'team_away','spread_favorite','stadium_neutral',
               'over_under_line','team_favorite_id']]
 
-# grab only games from 2015 to 2019
-df = df[(df.schedule_season.astype('int') >= 2015) & (df.schedule_season.astype('int') < 2019)]
+# grab only games from 2000 to 2019
+df = df[(df.schedule_season.astype('int') >= 2000) & (df.schedule_season.astype('int') < 2019)]
 
 # grab only regular season games
 df = df[df['schedule_playoff'] == False]
