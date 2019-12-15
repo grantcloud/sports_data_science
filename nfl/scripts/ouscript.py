@@ -17,7 +17,7 @@ df = df.loc[:,['schedule_season','schedule_playoff',
               'team_away','spread_favorite','stadium_neutral',
               'over_under_line','team_favorite_id']]
 
-# grab only games from 2000 to 2019
+# grab only games from 2000 to 2018
 df = df[(df.schedule_season.astype('int') >= 2000) & (df.schedule_season.astype('int') < 2019)]
 
 # grab only regular season games
